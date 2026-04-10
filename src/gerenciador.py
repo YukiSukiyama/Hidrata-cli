@@ -51,3 +51,30 @@ def concluir_tarefa(tarefa_id: int):
             salvar_dados(dados)
             return True # Retorna True se encontrou e concluiu
     return False # Retorna False se o ID não existir (útil para testes de erro)
+
+def remover_tarefa(tarefa_id: int) -> bool:
+    """Remove uma tarefa específica pelo ID."""
+    # 1. Carregamos o pacote inteiro de dados
+    dados = carregar_dados()
+    
+    # 2. Pegamos só a lista de tarefas que está lá dentro
+    tarefas_atuais = dados["tarefas"]
+    
+    # 3. Filtramos a lista (tirando o ID que queremos apagar)
+    tarefas_filtradas = [t for t in tarefas_atuais if t["id"] != tarefa_id]
+    
+    # 4. Verificamos se o tamanho mudou (se não mudou, o ID não existia)
+    if len(tarefas_atuais) == len(tarefas_filtradas):
+        return False
+        
+    # 5. Colocamos a lista nova dentro do pacote de dados e salvamos
+    dados["tarefas"] = tarefas_filtradas
+    salvar_dados(dados)
+    
+    return True
+
+def limpar_tarefas():
+    """Apaga todas as tarefas do arquivo JSON."""
+    dados = carregar_dados()
+    dados["tarefas"] = [] # Esvazia a lista
+    salvar_dados(dados)

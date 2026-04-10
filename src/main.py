@@ -44,5 +44,25 @@ def concluir(tarefa_id: int):
     else:
         console.print(f"[red]✖ Erro: Tarefa com ID {tarefa_id} não encontrada.[/red]")
 
+@app.command()
+def remover(tarefa_id: int):
+    """Remove uma tarefa pelo seu ID."""
+    sucesso = gerenciador.remover_tarefa(tarefa_id)
+    if sucesso:
+        console.print(f"[green]✔ Tarefa {tarefa_id} removida com sucesso![/green]")
+    else:
+        console.print(f"[red]✖ Erro: Tarefa com ID {tarefa_id} não encontrada.[/red]")
+
+@app.command()
+def limpar():
+    """Apaga TODAS as tarefas da lista."""
+    # O Typer tem uma função muito legal para pedir confirmação de segurança!
+    confirmacao = typer.confirm("Tem certeza que deseja apagar TODAS as tarefas?")
+    if confirmacao:
+        gerenciador.limpar_tarefas()
+        console.print("[green]✔ Todas as tarefas foram apagadas e a lista está limpa![/green]")
+    else:
+        console.print("[yellow]Operação cancelada. Suas tarefas estão a salvo.[/yellow]")
+
 if __name__ == "__main__":
     app()

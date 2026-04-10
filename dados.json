@@ -1,14 +1,3 @@
 {
-    "tarefas": [
-        {
-            "id": 1,
-            "descricao": "Beber 500ml de água",
-            "concluida": false
-        },
-        {
-            "id": 2,
-            "descricao": "Alongar o pescoço por 5 minutos",
-            "concluida": false
-        }
-    ]
+    "tarefas": []
 }
