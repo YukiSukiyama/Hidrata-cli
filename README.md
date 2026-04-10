@@ -1,26 +1,81 @@
-# HidraCLI 💧
+# HidraCLI 💧 - v1.0.0
 
 Um assistente de linha de comando (CLI) elegante e minimalista para te ajudar a lembrar de beber água e praticar o autocuidado durante longas jornadas de estudo ou trabalho.
 
-## 🚀 Funcionalidades
+## 🎯 O Problema (Dor Real)
+Profissionais de tecnologia e estudantes passam horas na frente do computador e frequentemente esquecem de hábitos básicos de saúde física e mental. O **HidraCLI** resolve essa dor permitindo o gerenciamento rápido de metas diárias de autocuidado (como hidratação, pausas e alongamentos) sem precisar sair do terminal.
 
-- **Adicionar:** Crie novas tarefas de autocuidado (ex: beber água, alongar).
-- **Listar:** Visualize suas pendências em uma tabela interativa e colorida.
-- **Concluir:** Marque tarefas como feitas através do ID.
-- **Armazenamento Seguro:** Dados salvos localmente em um arquivo JSON.
+## 📸 Evidência de Funcionamento
 
-## 🛠️ Tecnologias Utilizadas
+<img width="980" height="596" alt="image" src="https://github.com/user-attachments/assets/758c23f6-6640-4707-be70-dc2cdb81ded6" />
+<img width="772" height="567" alt="image" src="https://github.com/user-attachments/assets/7d8dc5f6-9d9e-46c8-a0bc-835dde561fbe" />
 
-- **[Python](https://www.python.org/):** Linguagem principal.
-- **[Typer](https://typer.tiangolo.com/):** Criação da interface de linha de comando.
-- **[Rich](https://rich.readthedocs.io/):** Estilização, cores e tabelas no terminal.
-- **[Pytest](https://docs.pytest.org/):** Testes automatizados.
-- **[Ruff](https://docs.astral.sh/ruff/):** Linter e análise estática ultrarrápida.
-- **GitHub Actions:** Pipeline de Integração Contínua (CI).
 
-## ⚙️ Como Instalar e Rodar
+## 🚀 Tecnologias Utilizadas
+* **Python 3** - Linguagem principal do projeto.
+* **Typer** - Para a construção da interface de linha de comando (CLI).
+* **Rich** - Para a formatação elegante e colorida das tabelas no terminal.
+* **Pytest** - Para a criação e execução dos testes automatizados.
+* **Ruff** - Para a análise estática (linting) e garantia da qualidade do código.
+* **GitHub Actions** - Para a esteira de Integração Contínua (CI).
 
-1. Clone o repositório e entre na pasta:
-   ```bash
-   git clone [https://github.com/SEU-USUARIO/hidra-cli.git](https://github.com/SEU-USUARIO/hidra-cli.git)
-   cd hidra-cli
+---
+
+## ⚙️ Passo a Passo (Como Executar)
+
+Siga os comandos abaixo no terminal para rodar o projeto localmente:
+
+**1. Clone o repositório e acesse a pasta:**
+```bash 
+git clone [https://github.com/SEU-USUARIO/hidra-cli.git](https://github.com/SEU-USUARIO/hidra-cli.git)
+cd hidra-cli
+````
+**2. Crie e ative o ambiente virtual:**
+```bash 
+python -m venv venv
+
+# Ativação no Windows:
+.\venv\Scripts\activate
+
+# Ativação no Linux/Mac:
+source venv/bin/activate
+````
+**3. Instale as dependências:**
+```bash 
+pip install -r requirements.txt
+````
+## ⚙️ Passo a Passo (Como Executar)
+Com o ambiente ativado, você pode testar as funcionalidades da aplicação utilizando os seguintes comandos:
+
+**Adicionar uma nova tarefa:**
+```bash 
+python src/main.py adicionar "Beber 500ml de água"
+python src/main.py adicionar "Alongar o pescoço e os pulsos"
+````
+**Listar todas as tarefas (Gera a tabela interativa):**
+```bash 
+python src/main.py listar
+````
+**Concluir uma tarefa (Substitua o '1' pelo ID desejado):**
+```bash 
+python src/main.py concluir 1
+````
+**Remover uma tarefa (Substitua o '2' pelo ID desejado):**
+```bash 
+python src/main.py remover 2
+````
+**Limpar TODAS as tarefas da lista:**
+```bash 
+python src/main.py limpar
+````
+## 🧪 Validando a Qualidade (Testes e Linting)
+Este projeto cumpre os requisitos de qualidade de software exigidos. Para verificar as validações, rode:
+**Para executar a suíte de testes automatizados (Pytest):**
+```bash 
+python -m pytest tests/
+````
+**Para executar a análise estática (Ruff):**
+```bash 
+python -m ruff check .
+````
+Desenvolvido por Murilo Yuki Sukiyama
