@@ -1,6 +1,6 @@
 # HidraCLI 💧 - v1.0.0
 
-Um assistente de linha de comando (CLI) elegante e minimalista para te ajudar a lembrar de beber água e praticar o autocuidado durante longas jornadas de estudo ou trabalho.
+Um assistente de linha de comando (CLI)  para ajudar a lembrar de beber água e praticar o autocuidado durante longas jornadas de estudo ou trabalho.
 
 ## 🎯 O Problema (Dor Real)
 Profissionais de tecnologia e estudantes passam horas na frente do computador e frequentemente esquecem de hábitos básicos de saúde física e mental. O **HidraCLI** resolve essa dor permitindo o gerenciamento rápido de metas diárias de autocuidado (como hidratação, pausas e alongamentos) sem precisar sair do terminal.
