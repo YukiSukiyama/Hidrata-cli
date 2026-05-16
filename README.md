@@ -1,17 +1,17 @@
-# HidraCLI 💧 - v1.0.0
+# HidraCLI  - v1.0.0
 
 Um assistente de linha de comando (CLI)  para ajudar a lembrar de beber água e praticar o autocuidado durante longas jornadas de estudo ou trabalho.
 
-## 🎯 O Problema (Dor Real)
-Profissionais de tecnologia e estudantes passam horas na frente do computador e frequentemente esquecem de hábitos básicos de saúde física e mental. O **HidraCLI** resolve essa dor permitindo o gerenciamento rápido de metas diárias de autocuidado (como hidratação, pausas e alongamentos) sem precisar sair do terminal.
+##  O Problema (Dor Real)
+Profissionais de tecnologia e estudantes passam horas na frente do computador e frequentemente esquecem de hábitos básicos de saúde física e mental. O **HidraCLI**  ajuda a resolver essa dor permitindo o gerenciamento rápido de metas diárias de autocuidado (como hidratação, pausas e alongamentos) sem precisar sair do terminal.
 
-## 📸 Evidência de Funcionamento
+##  Evidência de Funcionamento
 
 <img width="980" height="596" alt="image" src="https://github.com/user-attachments/assets/758c23f6-6640-4707-be70-dc2cdb81ded6" />
 <img width="772" height="567" alt="image" src="https://github.com/user-attachments/assets/7d8dc5f6-9d9e-46c8-a0bc-835dde561fbe" />
 
 
-## 🚀 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 * **Python 3** - Linguagem principal do projeto.
 * **Typer** - Para a construção da interface de linha de comando (CLI).
 * **Rich** - Para a formatação elegante e colorida das tabelas no terminal.
@@ -21,7 +21,7 @@ Profissionais de tecnologia e estudantes passam horas na frente do computador e 
 
 ---
 
-## ⚙️ Passo a Passo (Como Executar)
+##  Passo a Passo (Como Executar)
 
 Siga os comandos abaixo no terminal para rodar o projeto localmente:
 
@@ -44,7 +44,7 @@ source venv/bin/activate
 ```bash 
 pip install -r requirements.txt
 ````
-## ⚙️ Passo a Passo (Como Executar)
+##  Passo a Passo (Como Executar)
 Com o ambiente ativado, você pode testar as funcionalidades da aplicação utilizando os seguintes comandos:
 
 **Adicionar uma nova tarefa:**
@@ -68,7 +68,11 @@ python src/main.py remover 2
 ```bash 
 python src/main.py limpar
 ````
-## 🧪 Validando a Qualidade (Testes e Linting)
+**Para fazer uma pausa com um conselho motivacional: **
+```bash
+python src/main.py pausa`
+```
+##  Validando a Qualidade (Testes e Linting)
 Este projeto cumpre os requisitos de qualidade de software exigidos. Para verificar as validações, rode:
 **Para executar a suíte de testes automatizados (Pytest):**
 ```bash 
