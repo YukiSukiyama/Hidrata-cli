@@ -8,7 +8,7 @@ def usar_banco_de_dados_temporario(monkeypatch, tmp_path):
     yield
 
 def test_adicionar_tarefa_caminho_feliz():
-    """Testa se uma tarefa é adicionada e salva corretamente."""
+
     nova_tarefa = gerenciador.adicionar_tarefa("Fazer alongamento")
     
     assert nova_tarefa["descricao"] == "Fazer alongamento"
@@ -21,7 +21,7 @@ def test_adicionar_tarefa_caminho_feliz():
 
 
 def test_concluir_tarefa_id_invalido():
-    """Testa se o sistema lida bem ao tentar concluir um ID inexistente."""
+   
     
     resultado = gerenciador.concluir_tarefa(99)
     
@@ -30,7 +30,7 @@ def test_concluir_tarefa_id_invalido():
 
 
 def test_listar_tarefas_arquivo_inexistente():
-    """Testa se o sistema consegue listar tarefas mesmo quando o JSON não existe."""
+
     
     tarefas = gerenciador.listar_tarefas()
     

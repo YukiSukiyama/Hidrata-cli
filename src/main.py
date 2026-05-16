@@ -15,7 +15,7 @@ def adicionar(descricao: str):
 
 @app.command()
 def listar():
-    """Lista todas as tarefas de autocuidado."""
+    
     tarefas = gerenciador.listar_tarefas()
     
     if not tarefas:
@@ -36,7 +36,7 @@ def listar():
 
 @app.command()
 def concluir(tarefa_id: int):
-    """Marca uma tarefa como concluída pelo seu ID."""
+   
     sucesso = gerenciador.concluir_tarefa(tarefa_id)
     if sucesso:
         console.print(f"[green]✔ Parabéns! Tarefa {tarefa_id} concluída![/green]")
@@ -45,7 +45,7 @@ def concluir(tarefa_id: int):
 
 @app.command()
 def remover(tarefa_id: int):
-    """Remove uma tarefa pelo seu ID."""
+
     sucesso = gerenciador.remover_tarefa(tarefa_id)
     if sucesso:
         console.print(f"[green]✔ Tarefa {tarefa_id} removida com sucesso![/green]")
@@ -54,7 +54,7 @@ def remover(tarefa_id: int):
 
 @app.command()
 def limpar():
-    """Apaga TODAS as tarefas da lista."""
+    
     confirmacao = typer.confirm("Tem certeza que deseja apagar TODAS as tarefas?")
     if confirmacao:
         gerenciador.limpar_tarefas()
