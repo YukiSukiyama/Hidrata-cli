@@ -12,7 +12,7 @@ def carregar_dados():
         try:
             return json.load(f)
         except json.JSONDecodeError:
-            # Se o arquivo estiver corrompido ou vazio, retorna padrão
+            
             return {"tarefas": []}
 
 def salvar_dados(dados):
@@ -24,7 +24,7 @@ def adicionar_tarefa(descricao: str):
     """Adiciona uma nova tarefa de autocuidado ao JSON."""
     dados = carregar_dados()
     
-    # Gera um ID simples baseado na quantidade de itens
+    
     novo_id = len(dados["tarefas"]) + 1
     
     nova_tarefa = {
@@ -49,25 +49,25 @@ def concluir_tarefa(tarefa_id: int):
         if tarefa["id"] == tarefa_id:
             tarefa["concluida"] = True
             salvar_dados(dados)
-            return True # Retorna True se encontrou e concluiu
-    return False # Retorna False se o ID não existir (útil para testes de erro)
+            return True 
+    return False 
 
 def remover_tarefa(tarefa_id: int) -> bool:
     """Remove uma tarefa específica pelo ID."""
-    # 1. Carregamos o pacote inteiro de dados
+
     dados = carregar_dados()
     
-    # 2. Pegamos só a lista de tarefas que está lá dentro
+   
     tarefas_atuais = dados["tarefas"]
     
-    # 3. Filtramos a lista (tirando o ID que queremos apagar)
+   
     tarefas_filtradas = [t for t in tarefas_atuais if t["id"] != tarefa_id]
     
-    # 4. Verificamos se o tamanho mudou (se não mudou, o ID não existia)
+   
     if len(tarefas_atuais) == len(tarefas_filtradas):
         return False
         
-    # 5. Colocamos a lista nova dentro do pacote de dados e salvamos
+   
     dados["tarefas"] = tarefas_filtradas
     salvar_dados(dados)
     
@@ -76,5 +76,18 @@ def remover_tarefa(tarefa_id: int) -> bool:
 def limpar_tarefas():
     """Apaga todas as tarefas do arquivo JSON."""
     dados = carregar_dados()
-    dados["tarefas"] = [] # Esvazia a lista
+    dados["tarefas"] = [] 
     salvar_dados(dados)
+
+import urllib.request
+import json
+
+def obter_conselho() -> str:
+    url = "https://api.adviceslip.com/advice"
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=5) as response:
+            dados = json.loads(response.read().decode())
+            return dados["slip"]["advice"]
+    except Exception:
+        return "Aproveite a pausa para respirar fundo e beber água!"
