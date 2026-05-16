@@ -2,7 +2,6 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-# Importa o "cérebro" que criamos no outro arquivo
 import gerenciador 
 
 app = typer.Typer(help="HidraCLI - Seu assistente de autocuidado e hidratação.")
@@ -23,7 +22,7 @@ def listar():
         console.print("[yellow]Nenhuma tarefa registrada ainda. Que tal adicionar 'Beber 500ml de água'?[/yellow]")
         return
 
-    # Cria uma tabela bonita com a biblioteca Rich
+
     tabela = Table(title="💧 Suas Tarefas de Autocuidado")
     tabela.add_column("ID", style="cyan", justify="center")
     tabela.add_column("Descrição", style="magenta")
@@ -56,13 +55,21 @@ def remover(tarefa_id: int):
 @app.command()
 def limpar():
     """Apaga TODAS as tarefas da lista."""
-    # O Typer tem uma função muito legal para pedir confirmação de segurança!
     confirmacao = typer.confirm("Tem certeza que deseja apagar TODAS as tarefas?")
     if confirmacao:
         gerenciador.limpar_tarefas()
         console.print("[green]✔ Todas as tarefas foram apagadas e a lista está limpa![/green]")
     else:
         console.print("[yellow]Operação cancelada. Suas tarefas estão a salvo.[/yellow]")
+
+
+@app.command()
+def pausa():
+    console.print("\n[bold blue]⏳ Vamos parar por agora, descanse, estique as pernas e beba uma água ou um refri e relaxe, vc merece.[/bold blue]")
+    
+    conselho = gerenciador.obter_conselho()
+    
+    console.print(f"👉 [italic]{conselho}[/italic]\n")
 
 if __name__ == "__main__":
     app()
