@@ -68,9 +68,9 @@ python src/main.py remover 2
 ```bash 
 python src/main.py limpar
 ````
-**Para fazer uma pausa com um conselho motivacional: **
+**Para fazer uma pausa com um conselho motivacional:**
 ```bash
-python src/main.py pausa`
+python src/main.py pausa
 ```
 ##  Validando a Qualidade (Testes e Linting)
 Este projeto cumpre os requisitos de qualidade de software exigidos. Para verificar as validações, rode:
