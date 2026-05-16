@@ -37,8 +37,7 @@ def test_listar_tarefas_arquivo_inexistente():
     assert isinstance(tarefas, list)
     assert len(tarefas) == 0
 
-from src import gerenciador
-
+    
 def test_obter_conselho_integracao():
     conselho = gerenciador.obter_conselho()
     

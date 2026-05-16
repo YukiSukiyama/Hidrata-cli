@@ -1,5 +1,6 @@
 import json
 import os
+import urllib.request
 
 ARQUIVO_DADOS = "dados.json"
 
@@ -79,8 +80,6 @@ def limpar_tarefas():
     dados["tarefas"] = [] 
     salvar_dados(dados)
 
-import urllib.request
-import json
 
 def obter_conselho() -> str:
     url = "https://api.adviceslip.com/advice"
